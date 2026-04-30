@@ -131,6 +131,10 @@ section + section {
   justify-content: center;
 }
 
+.section-head--center .section-lede {
+  margin-inline: auto;
+}
+
 .section-head--sub {
   margin-top: clamp(3.5rem, 7vw, 5rem);
 }

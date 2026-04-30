@@ -12,7 +12,7 @@ export function renderFooter() {
         href: 'https://karafco.ru',
         target: '_blank',
         rel: 'noopener noreferrer',
-      }, ['Karaf · Bureau']),
+      }, ['Karaf']),
       h('span', { class: 'footer__col footer__col--right' }, [
         h('span', {}, ['Набрано в Fraunces']),
         h('span', { class: 'footer__roman' }, ['—']),
