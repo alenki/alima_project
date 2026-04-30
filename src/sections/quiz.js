@@ -19,6 +19,12 @@ export function renderQuiz() {
 function paint() {
   if (!rootEl) return;
   rootEl.innerHTML = '';
+  rootEl.appendChild(
+    h('div', { class: 'section-mark', 'aria-hidden': 'true' }, [
+      h('span', { class: 'section-mark__roman' }, ['III']),
+      h('span', { class: 'section-mark__label' }, ['Анкета']),
+    ])
+  );
   rootEl.appendChild(buildShell());
 }
 
@@ -32,8 +38,12 @@ function buildShell() {
 
   return h('div', { class: 'container' }, [
     h('header', { class: 'section-head section-head--center reveal' }, [
-      h('span', { class: 'eyebrow' }, ['Анкета']),
-      h('h2', { class: 'section-title' }, ['Ответьте на 8 вопросов']),
+      h('span', { class: 'eyebrow' }, ['Диагностика']),
+      h('h2', { class: 'section-title' }, [
+        'Ответьте на ',
+        h('span', { class: 'ink-italic' }, ['восемь']),
+        ' вопросов',
+      ]),
       h('p', { class: 'section-lede' }, [
         'Выбирайте вариант, который точнее всего описывает ваш проект сегодня. Пройти анкету можно за 2 минуты.',
       ]),
@@ -71,8 +81,11 @@ function buildShell() {
               onClick: () => selectOption(i),
             },
             [
-              h('span', { class: 'quiz-option__check', 'aria-hidden': 'true' }),
+              h('span', { class: 'quiz-option__letter', 'aria-hidden': 'true' }, [
+                String.fromCharCode(65 + i),
+              ]),
               h('span', { class: 'quiz-option__label' }, [opt.label]),
+              h('span', { class: 'quiz-option__check', 'aria-hidden': 'true' }),
             ]
           )
         )
@@ -87,7 +100,7 @@ function buildShell() {
             disabled: state.step === 0,
             onClick: () => goPrev(),
           },
-          ['← Назад']
+          ['← Предыдущий']
         ),
         h(
           'button',
@@ -97,7 +110,7 @@ function buildShell() {
             disabled: !isAnswered,
             onClick: () => goNext(),
           },
-          [isLast ? 'Получить результат' : 'Далее →']
+          [isLast ? 'Получить результат ↗' : 'Следующий →']
         ),
       ]),
     ]),

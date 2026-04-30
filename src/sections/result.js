@@ -2,6 +2,14 @@ import { h } from '../lib/dom.js';
 import { archetypeMap, archetypes } from '../data/archetypes.js';
 import { resetQuiz } from './quiz.js';
 
+const ARCHETYPE_SOLID = {
+  expert: '#c43c1d',
+  perf: '#1f3142',
+  community: '#b58a3c',
+  brand: '#2f5d50',
+};
+const accentSolidById = (id) => ARCHETYPE_SOLID[id] || '#13110d';
+
 let rootEl = null;
 
 export function renderResultMount() {
@@ -27,16 +35,24 @@ function buildResult({ winner, scores, percentByMax }) {
   const arc = archetypeMap[winner];
 
   return h('div', { class: 'container' }, [
+    h('div', { class: 'section-mark section-mark--center', 'aria-hidden': 'true' }, [
+      h('span', { class: 'section-mark__roman' }, ['IV']),
+      h('span', { class: 'section-mark__label' }, ['Результат']),
+    ]),
     h('header', { class: 'section-head section-head--center' }, [
-      h('span', { class: 'eyebrow' }, ['Результат']),
-      h('h2', { class: 'section-title' }, ['Ваша рекомендованная модель']),
+      h('span', { class: 'eyebrow' }, ['§ 04 / Рекомендация']),
+      h('h2', { class: 'section-title' }, [
+        'Ваша ',
+        h('span', { class: 'ink-italic' }, ['рекомендованная']),
+        ' модель',
+      ]),
     ]),
 
     h(
       'article',
       {
         class: 'result-card glass',
-        style: { '--accent': arc.accent },
+        style: { '--accent': arc.accent, '--accent-solid': accentSolidById(winner) },
       },
       [
         h('div', { class: 'result-card__head' }, [
@@ -79,7 +95,7 @@ function buildResult({ winner, scores, percentByMax }) {
                       h('span', {
                         class: 'bar__fill',
                         style: {
-                          background: a.accent,
+                          background: accentSolidById(a.id),
                           width: '0%',
                         },
                         dataset: { pct: String(pct) },

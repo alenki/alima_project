@@ -2,14 +2,15 @@ import { h } from '../lib/dom.js';
 
 export function renderHero() {
   return h('section', { id: 'hero', class: 'hero' }, [
-    h('div', { class: 'orb orb--a' }),
-    h('div', { class: 'orb orb--b' }),
-    h('div', { class: 'orb orb--c' }),
+    h('div', { class: 'hero__mark', 'aria-hidden': 'true' }, [
+      h('span', { class: 'hero__mark-roman' }, ['I']),
+      h('span', { class: 'hero__mark-label' }, ['Введение']),
+    ]),
     h('div', { class: 'container hero__inner' }, [
       h('h1', { class: 'hero__title reveal' }, [
-        'Модель продвижения ',
-        h('span', { class: 'gradient-text' }, ['маркетинговых услуг']),
-        ' в визуальных социальных сетях',
+        'Модель ',
+        h('span', { class: 'ink-italic' }, ['продвижения']),
+        ' маркетинговых услуг в визуальных социальных сетях.',
       ]),
       h('p', { class: 'hero__lede reveal' }, [
         'Восемь вопросов о вашем продукте, аудитории, целях и ресурсах — и алгоритм подбирает рекомендованную модель продвижения, площадки и структуру воронки.',
@@ -25,7 +26,7 @@ export function renderHero() {
               document.querySelector('#quiz')?.scrollIntoView({ behavior: 'smooth' });
             },
           },
-          ['Пройти анкету ', h('span', { class: 'btn__arrow', 'aria-hidden': 'true' }, ['→'])]
+          ['Пройти анкету ', h('span', { class: 'btn__arrow', 'aria-hidden': 'true' }, ['↗'])]
         ),
         h(
           'a',
