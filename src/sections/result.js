@@ -21,6 +21,12 @@ export function renderResult(scoreResult) {
   if (!rootEl) return;
   rootEl.classList.remove('is-empty');
   rootEl.innerHTML = '';
+  rootEl.appendChild(
+    h('div', { class: 'section-mark', 'aria-hidden': 'true' }, [
+      h('span', { class: 'section-mark__roman' }, ['IV']),
+      h('span', { class: 'section-mark__label' }, ['Результат']),
+    ])
+  );
   rootEl.appendChild(buildResult(scoreResult));
   // Trigger bar-chart animation
   requestAnimationFrame(() => {
@@ -35,12 +41,8 @@ function buildResult({ winner, scores, percentByMax }) {
   const arc = archetypeMap[winner];
 
   return h('div', { class: 'container' }, [
-    h('div', { class: 'section-mark section-mark--center', 'aria-hidden': 'true' }, [
-      h('span', { class: 'section-mark__roman' }, ['IV']),
-      h('span', { class: 'section-mark__label' }, ['Результат']),
-    ]),
     h('header', { class: 'section-head section-head--center' }, [
-      h('span', { class: 'eyebrow' }, ['§ 04 / Рекомендация']),
+      h('span', { class: 'eyebrow' }, ['Рекомендация']),
       h('h2', { class: 'section-title' }, [
         'Ваша ',
         h('span', { class: 'ink-italic' }, ['рекомендованная']),

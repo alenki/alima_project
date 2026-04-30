@@ -785,10 +785,16 @@ section + section {
   line-height: 1.2;
   margin: 0 0 1.6rem;
   color: var(--ink);
+  /* Reserve space for the longest question (2 lines) so the card height
+     does not jump as the user steps through questions of different lengths. */
+  min-height: calc(2 * 1.2em);
 }
 
 .quiz-options {
   display: grid;
+  /* Questions have 3–5 options. Reserve 5 row tracks so steps with fewer
+     options leave empty space at the bottom rather than shrinking the card. */
+  grid-template-rows: repeat(5, minmax(3.5rem, auto));
   gap: 0.5rem;
   margin-bottom: 1.8rem;
 }
@@ -882,7 +888,7 @@ section + section {
 .result {
   padding-block: 0;
   scroll-margin-top: 60px;
-  padding-block: clamp(1rem, 4vw, 3rem) clamp(4rem, 9vw, 7rem);
+  padding-block: clamp(5rem, 11vw, 9rem) clamp(4rem, 9vw, 7rem);
   border-top: 1px solid var(--rule);
 }
 

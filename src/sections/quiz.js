@@ -9,6 +9,7 @@ const state = {
 };
 
 let rootEl = null;
+let firstPaint = true;
 
 export function renderQuiz() {
   rootEl = h('section', { id: 'quiz', class: 'quiz' }, []);
@@ -26,6 +27,13 @@ function paint() {
     ])
   );
   rootEl.appendChild(buildShell());
+  // The global IntersectionObserver from initReveal() only watches nodes that
+  // existed at boot. Re-renders create fresh .reveal nodes that nobody is
+  // observing — without this, they stay opacity:0 forever.
+  if (!firstPaint) {
+    rootEl.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
+  }
+  firstPaint = false;
 }
 
 function buildShell() {
