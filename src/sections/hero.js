@@ -6,10 +6,6 @@ export function renderHero() {
     h('div', { class: 'orb orb--b' }),
     h('div', { class: 'orb orb--c' }),
     h('div', { class: 'container hero__inner' }, [
-      h('div', { class: 'badge reveal' }, [
-        h('span', { class: 'badge__dot' }),
-        'Дипломная работа · 2026',
-      ]),
       h('h1', { class: 'hero__title reveal' }, [
         'Модель продвижения ',
         h('span', { class: 'gradient-text' }, ['маркетинговых услуг']),

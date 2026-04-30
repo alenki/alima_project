@@ -899,41 +899,23 @@ section {
 
 .footer__inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
 }
 
-.footer__brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--ink);
-  font-weight: 600;
-}
-
-.footer__logo {
-  width: 28px;
-  height: 28px;
-  display: grid;
-  place-items: center;
-  border-radius: 8px;
-  background: var(--accent);
-  color: white;
+.footer__karaf {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  font-size: 0.72rem;
+  color: var(--ink-mute);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
 }
 
-.footer__meta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  flex-wrap: wrap;
-}
-
-.footer__sep {
-  opacity: 0.5;
+.footer__karaf:hover {
+  color: var(--ink);
 }
 
 /* =========================================================
