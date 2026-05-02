@@ -1323,7 +1323,7 @@ ol.panel__list li::marker {
   .hero {
     min-height: 100vh;
     min-height: 100dvh;
-    padding-block: clamp(4.5rem, 14vw, 6rem) clamp(3.5rem, 10vw, 5rem);
+    padding-block: clamp(9rem, 26vw, 12rem) clamp(3.5rem, 10vw, 5rem);
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -1334,7 +1334,9 @@ ol.panel__list li::marker {
   /* Push the entire content block (title → stats) to the bottom of the viewport */
   .hero__title { margin-top: auto; }
 
-  .hero__mark { top: 1.5rem; left: 1.2rem; }
+  .hero__mark { top: 1.2rem; left: 1.2rem; gap: 0.25rem; }
+  .hero__mark-roman { font-size: 1.7rem; }
+  .hero__mark-label { font-size: 0.62rem; letter-spacing: 0.16em; }
 
   .hero__title {
     font-size: clamp(1.85rem, 8.6vw, 2.6rem);
