@@ -40,7 +40,6 @@ export function renderMethodology() {
     ]),
     h('div', { class: 'container' }, [
       h('header', { class: 'section-head reveal' }, [
-        h('span', { class: 'eyebrow' }, ['Методология']),
         h('h2', { class: 'section-title' }, [
           'Как ',
           h('span', { class: 'ink-italic' }, ['работает']),

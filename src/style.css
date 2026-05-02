@@ -497,7 +497,7 @@ section + section {
 /* =========================================================
    Methodology
    ========================================================= */
-.methodology { padding-top: clamp(5rem, 11vw, 9rem); }
+.methodology { padding-top: clamp(7rem, 11vw, 9rem); }
 
 .blocks-grid {
   display: grid;
@@ -1041,9 +1041,19 @@ section + section {
 }
 
 @media (max-width: 720px) {
-  .gate-choices { grid-template-columns: 1fr; }
+  .gate-choices { grid-template-columns: 1fr; gap: 0.9rem; }
   .gate-link-row { grid-template-columns: 1fr; }
   .gate-template__grid { grid-template-columns: 1fr; }
+
+  .gate-choice {
+    gap: 1.1rem;
+    padding: 1.4rem 1.3rem;
+    min-height: 10.5rem;
+  }
+  .gate-choice__letter { font-size: 2rem; width: 1.2em; }
+  .gate-choice__label { font-size: 1.25rem; }
+  .gate-choice__sub { font-size: 0.92rem; }
+  .gate-choice__arrow { font-size: 1.1rem; }
 }
 
 /* =========================================================
@@ -1293,7 +1303,6 @@ ol.panel__list li::marker {
    ========================================================= */
 @media (max-width: 760px) {
   .hero__sidebar { display: none; }
-  .hero__mark { top: 1.5rem; left: 1.2rem; }
   .hero::before { font-size: 60vw; right: -10vw; top: 25vh; }
 
   .blocks-grid {
@@ -1305,28 +1314,89 @@ ol.panel__list li::marker {
   .block-card:nth-child(2n) { border-right: none; }
 
   .archetype-grid { grid-template-columns: 1fr; }
-  .archetype-card { border-right: none; }
 
   .result-grid { grid-template-columns: 1fr 1fr; }
   .panel:nth-child(2n) { border-right: none; }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 600px) {
   .hero {
-    padding-block: clamp(5rem, 14vw, 7rem) clamp(3rem, 8vw, 5rem);
-    min-height: auto;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding-block: clamp(4.5rem, 14vw, 6rem) clamp(3.5rem, 10vw, 5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .hero__title { font-size: clamp(1.9rem, 9vw, 3rem); line-height: 1.05; }
+  .hero .hero__inner.container { flex: 1; }
 
-  .hero__stats { grid-template-columns: 1fr; }
-  .hero__stat + .hero__stat {
-    padding-left: 0;
-    padding-top: 1rem;
-    border-top: 1px solid var(--rule);
-    margin-top: 0.4rem;
+  /* Push the entire content block (title → stats) to the bottom of the viewport */
+  .hero__title { margin-top: auto; }
+
+  .hero__mark { top: 1.5rem; left: 1.2rem; }
+
+  .hero__title {
+    font-size: clamp(1.85rem, 8.6vw, 2.6rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.1rem;
+    max-width: 18ch;
   }
+
+  .hero__lede {
+    font-size: 0.98rem;
+    line-height: 1.5;
+    margin-bottom: 1.8rem;
+    padding-top: 0.9rem;
+    max-width: 38ch;
+  }
+
+  /* Buttons: primary fills width, ghost sits beneath as a quiet secondary */
+  .hero__cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+    margin-bottom: 2.2rem;
+  }
+  .hero__cta .btn { justify-content: center; width: 100%; }
+  .hero__cta .btn--primary { padding-block: 1rem; }
+  .hero__cta .btn--ghost {
+    background: transparent;
+    border-color: transparent;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--rule-strong);
+    padding-block: 0.4rem;
+  }
+
+  /* Stats: editorial row layout — number left, caption right, hairline rules */
+  .hero__stats {
+    grid-template-columns: 1fr;
+    border-top: 1px solid var(--ink);
+    text-align: left;
+  }
+  .hero__stat {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero__stat:last-child { border-bottom: none; }
+  .hero__stat + .hero__stat { padding-left: 0; }
   .hero__stat + .hero__stat::before { display: none; }
+  .hero__stat dt {
+    font-size: 1.55rem;
+    flex: 0 0 auto;
+  }
+  .hero__stat dd {
+    margin: 0;
+    text-align: right;
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+  }
 
   .quiz-card__actions .btn { flex: 1; justify-content: center; }
 
