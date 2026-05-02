@@ -120,15 +120,6 @@ function buildResult({ winner, scores, percentByMax }) {
             },
             ['Пройти ещё раз']
           ),
-          h(
-            'button',
-            {
-              type: 'button',
-              class: 'btn btn--ghost',
-              onClick: (e) => copyResultLink(e.currentTarget, winner),
-            },
-            ['Скопировать ссылку']
-          ),
         ]),
       ]
     ),
@@ -146,20 +137,3 @@ function buildPanel(title, items, ordered = false) {
   ]);
 }
 
-function copyResultLink(button, winner) {
-  const url = `${location.origin}${location.pathname}#result=${winner}`;
-  navigator.clipboard
-    ?.writeText(url)
-    .then(() => flashButton(button, 'Ссылка скопирована'))
-    .catch(() => flashButton(button, 'Не удалось скопировать'));
-}
-
-function flashButton(button, text) {
-  const original = button.textContent;
-  button.textContent = text;
-  button.classList.add('is-flash');
-  setTimeout(() => {
-    button.textContent = original;
-    button.classList.remove('is-flash');
-  }, 1600);
-}
