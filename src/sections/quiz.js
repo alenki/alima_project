@@ -2,8 +2,10 @@ import { h } from '../lib/dom.js';
 import { questions } from '../data/questions.js';
 import { scoreAnswers } from '../lib/scoring.js';
 import { renderResult } from './result.js';
+import { renderGateBody, resetGate } from './gate.js';
 
 const state = {
+  view: 'gate', // 'gate' | 'quiz'
   step: 0,
   answers: new Array(questions.length).fill(-1),
 };
@@ -26,7 +28,7 @@ function paint() {
       h('span', { class: 'section-mark__label' }, ['Анкета']),
     ])
   );
-  rootEl.appendChild(buildShell());
+  rootEl.appendChild(buildBody());
   // The global IntersectionObserver from initReveal() only watches nodes that
   // existed at boot. Re-renders create fresh .reveal nodes that nobody is
   // observing — without this, they stay opacity:0 forever.
@@ -36,7 +38,22 @@ function paint() {
   firstPaint = false;
 }
 
-function buildShell() {
+function buildBody() {
+  if (state.view === 'gate') {
+    return renderGateBody({ onEnterQuiz: enterQuizFlow });
+  }
+  return buildQuizFlow();
+}
+
+function enterQuizFlow() {
+  state.view = 'quiz';
+  state.step = 0;
+  state.answers = new Array(questions.length).fill(-1);
+  paint();
+  scrollToQuiz();
+}
+
+function buildQuizFlow() {
   const q = questions[state.step];
   const total = questions.length;
   const stepNumber = state.step + 1;
@@ -162,8 +179,16 @@ function scrollToQuiz() {
 }
 
 export function resetQuiz() {
+  state.view = 'gate';
   state.step = 0;
   state.answers = new Array(questions.length).fill(-1);
+  resetGate();
   paint();
   document.querySelector('#quiz')?.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Allow the gate to trigger a re-paint of the section without going through
+// the section's internals.
+export function repaintQuizSection() {
+  paint();
 }

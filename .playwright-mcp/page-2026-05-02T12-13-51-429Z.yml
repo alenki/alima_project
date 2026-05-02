@@ -1,0 +1,111 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]: I
+      - generic [ref=e6]: Введение
+    - generic [ref=e7]:
+      - heading "Модель продвижения маркетинговых услуг в визуальных социальных сетях." [level=1] [ref=e8]
+      - paragraph [ref=e9]: Восемь вопросов о вашем продукте, аудитории, целях и ресурсах — и алгоритм подбирает рекомендованную модель продвижения, площадки и структуру воронки.
+      - generic [ref=e10]:
+        - link "Пройти анкету" [ref=e11] [cursor=pointer]:
+          - /url: "#quiz"
+          - text: Пройти анкету
+          - generic [ref=e12]: ↗
+        - link "Как работает модель" [ref=e13] [cursor=pointer]:
+          - /url: "#methodology"
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - term [ref=e16]: "8"
+          - definition [ref=e17]: вопросов в анкете
+        - generic [ref=e18]:
+          - term [ref=e19]: "4"
+          - definition [ref=e20]: модели продвижения
+        - generic [ref=e21]:
+          - term [ref=e22]: ~2 мин
+          - definition [ref=e23]: до результата
+  - generic [ref=e24]:
+    - generic:
+      - generic: II
+      - generic: Методология
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - generic [ref=e27]: Методология
+        - heading "Как работает модель" [level=2] [ref=e28]
+        - paragraph [ref=e29]: Каждый ответ имеет вес по четырём архетипам продвижения. Сумма весов формирует итоговую модель — ту, которая в данных условиях даёт максимальный результат.
+      - generic [ref=e30]:
+        - article [ref=e31]:
+          - generic [ref=e32]: "01"
+          - heading "Продукт" [level=3] [ref=e33]
+          - paragraph [ref=e34]: Направление услуг агентства — от SMM-комплекса до брендинга и консалтинга.
+        - article [ref=e35]:
+          - generic [ref=e36]: "02"
+          - heading "Целевая аудитория" [level=3] [ref=e37]
+          - paragraph [ref=e38]: Портрет идеального клиента и этап принятия решения о покупке.
+        - article [ref=e39]:
+          - generic [ref=e40]: "03"
+          - heading "Цели" [level=3] [ref=e41]
+          - paragraph [ref=e42]: "Бизнес-задача на горизонте 3 месяцев: охваты, лиды, лояльность или комьюнити."
+        - article [ref=e43]:
+          - generic [ref=e44]: "04"
+          - heading "Ресурсы" [level=3] [ref=e45]
+          - paragraph [ref=e46]: Бюджет, команда и текущие площадки, на которых уже есть присутствие.
+      - generic [ref=e47]:
+        - generic [ref=e48]: Формула модели
+        - code [ref=e49]: M = argmaxₐ Σᵢ wᵢ,ₐ(xᵢ)
+        - paragraph [ref=e50]: где xᵢ — выбранный вариант ответа в i-м вопросе, wᵢ,ₐ(xᵢ) — его вес для архетипа a, M — итоговая модель.
+      - generic [ref=e51]:
+        - generic [ref=e52]: Архетипы
+        - heading "Четыре архетипа продвижения" [level=3] [ref=e53]
+      - generic [ref=e54]:
+        - article [ref=e55]:
+          - generic [ref=e57]: "01"
+          - heading "Экспертная модель" [level=4] [ref=e58]
+          - paragraph [ref=e59]: Личный бренд и контентный авторитет
+          - paragraph [ref=e60]: Подходит, когда главный актив — экспертиза основателя или команды. Продвижение строится через глубокий контент, который формирует доверие и приводит «тёплых» клиентов.
+        - article [ref=e61]:
+          - generic [ref=e63]: "02"
+          - heading "Перформанс-модель" [level=4] [ref=e64]
+          - paragraph [ref=e65]: Прямые продажи и управляемые лиды
+          - paragraph [ref=e66]: Подходит, когда есть бюджет и задача — стабильный поток заявок. Упор на платный трафик, посадочные страницы и быструю оптимизацию воронки по метрикам.
+        - article [ref=e67]:
+          - generic [ref=e69]: "03"
+          - heading "Комьюнити-модель" [level=4] [ref=e70]
+          - paragraph [ref=e71]: Лояльность и вовлечённое сообщество
+          - paragraph [ref=e72]: Подходит для прогрева текущей базы и удержания клиентов. Контент строится вокруг общения, обсуждений и вовлечения — продажи идут через доверие сообщества.
+        - article [ref=e73]:
+          - generic [ref=e75]: "04"
+          - heading "Брендовая модель" [level=4] [ref=e76]
+          - paragraph [ref=e77]: Охват, узнаваемость и медиа-вес
+          - paragraph [ref=e78]: Подходит крупным игрокам с задачей зайти на рынок «громко». Упор на видеопродакшн, работу с блогерами и комплексные охватные кампании.
+  - generic [ref=e79]:
+    - generic:
+      - generic: III
+      - generic: Анкета
+    - generic [ref=e80]:
+      - generic [ref=e81]:
+        - generic [ref=e82]: Старт
+        - heading "Вы новичок или у вас уже есть страница?" [level=2] [ref=e83]
+        - paragraph [ref=e84]: От ответа зависит формат разбора. Новичку мы предложим пройти диагностику, владельцу страницы — оставить ссылку и получить шаблон обратной связи.
+      - generic [ref=e86]:
+        - button "Я новичок У меня ещё нет страницы в соцсетях" [ref=e87] [cursor=pointer]:
+          - generic [ref=e88]: A
+          - generic [ref=e89]:
+            - generic [ref=e90]: Я новичок
+            - generic [ref=e91]: У меня ещё нет страницы в соцсетях
+          - generic [ref=e92]: →
+        - button "У меня есть страница Хочу разбор существующей страницы" [ref=e93] [cursor=pointer]:
+          - generic [ref=e94]: B
+          - generic [ref=e95]:
+            - generic [ref=e96]: У меня есть страница
+            - generic [ref=e97]: Хочу разбор существующей страницы
+          - generic [ref=e98]: →
+  - contentinfo [ref=e99]:
+    - generic [ref=e100]:
+      - generic [ref=e101]:
+        - generic [ref=e102]: —
+        - generic [ref=e103]: Колофон · 2026
+      - link "Karaf" [ref=e104] [cursor=pointer]:
+        - /url: https://karafco.ru
+      - generic [ref=e105]:
+        - generic [ref=e106]: Набрано в Fraunces
+        - generic [ref=e107]: —
